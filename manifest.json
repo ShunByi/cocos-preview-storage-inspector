@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Cocos 预览本地存储",
+  "version": "1.1.8",
+  "description": "在 Chrome 中预览 Cocos Creator（2.4 / 3.x）时查看、编辑、删除 localStorage / sessionStorage / IndexedDB（多 iframe 扫描）。仅建议本地开发使用。",
+  "devtools_page": "devtools.html",
+  "background": {
+    "service_worker": "sw.js"
+  },
+  "permissions": ["scripting"],
+  "host_permissions": ["<all_urls>"]
+}

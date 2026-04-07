@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="panel.css" />
+</head>
+<body>
+  <div class="toolbar">
+    <button type="button" id="btnRefresh" class="primary">刷新</button>
+    <label>
+      <select id="selFrame" title="选择页面"></select>
+    </label>
+    <div class="search-bar">
+      <span class="search-label">查找：</span>
+      <label class="search-radio"><input type="radio" name="qmode" value="key" checked /> 存储键名</label>
+      <label class="search-radio"><input type="radio" name="qmode" value="field" /> JSON 内字段名</label>
+      <input type="search" id="qKey" class="search-input" placeholder="模糊匹配 localStorage 键名…" />
+      <input type="search" id="qField" class="search-input" placeholder="匹配任意嵌套对象里的字段名…" disabled style="display:none" />
+    </div>
+    <span class="status" id="status"></span>
+  </div>
+  <div class="tabs">
+    <button type="button" class="tab active" data-tab="local">localStorage</button>
+    <button type="button" class="tab" data-tab="session">sessionStorage</button>
+    <button type="button" class="tab" data-tab="idb">IndexedDB</button>
+  </div>
+  <div class="panel-body">
+    <div id="tabLocal" class="tab-pane"></div>
+    <div id="tabSession" class="tab-pane" hidden></div>
+    <div id="tabIdb" class="tab-pane" hidden></div>
+  </div>
+
+  <div id="modalBackdrop" class="modal-backdrop" hidden>
+    <div class="modal-dialog">
+      <div class="modal-title" id="modalTitle"></div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-footer">
+        <button type="button" id="modalCancel">取消</button>
+        <button type="button" id="modalOk" class="primary">确定</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="panel.js"></script>
+</body>
+</html>
